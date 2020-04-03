@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import WithNavbar from "./components/navigation/WithNavbar";
 
-function App() {
+const appTheme = {
+  primary: "#51ccc5",
+  secondary: "#ffd099",
+  warning: "#ff5a26",
+  danger: "#ff4657",
+  info: "#2796f1",
+  notification: "#7bff74",
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={appTheme}>
+      <WithNavbar />
+    </ThemeProvider>
   );
-}
-
+};
 export default App;
